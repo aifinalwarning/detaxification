@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     CANADIAN TAX REFORM OPTIONS — POLICY MASTERPIECE
+     Zero-Harm Notice: This document presents policy analysis
+     for democratic deliberation only. No content is intended
+     to facilitate tax evasion, coercion, surveillance, or
+     harm to any person or group. All analysis is educational
+     and subject to democratic oversight.
+     Anti-Inversion Clause: No framework herein may be used
+     to concentrate power, exclude populations, or weaponize
+     fiscal tools against vulnerable communities.
+     ============================================================ -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Exhaustive multi-PhD level policy analysis of Canadian tax reform options for policymakers — reducing income tax below 20%, GST restructuring, and system transformation.">
+<title>Canadian Tax Reform — Policy Masterpiece</title>
+<noscript>
+  <style>
+    .js-only { display: none !important; }
+    .noscript-banner { display: block !important; }
+    body { font-family: Georgia, serif; background: #f5f0e8; color: #111; }
+    .splash { display: none !important; }
+    #app { opacity: 1 !important; }
+    details { display: block; }
+    details summary { cursor: pointer; font-weight: bold; padding: 0.5rem 0; }
+  </style>
+</noscript>
+<style>
+/* ================================================================
+   SECTION: CSS CUSTOM PROPERTIES — Theme & Design Tokens
+   Purpose: Central control of all colours, spacing, typography.
+   Extend: Add new --color-* vars for theme variants.
+   ================================================================ */
+:root {
+  --navy:       #07122a;
+  --navy-mid:   #0d1f45;
+  --navy-light: #162d5e;
+  --gold:       #c9a84c;
+  --gold-light: #e8cc7a;
+  --gold-pale:  #f5eccd;
+  --parchment:  #f8f4ea;
+  --parchment2: #ede6d3;
+  --crimson:    #8b1a1a;
+  --teal:       #1a7b7b;
+  --silver:     #b8c4cc;
+  --text-main:  #1a1a2e;
+  --text-muted: #5a6070;
+  --radius:     4px;
+  --gutter:     clamp(1rem, 4vw, 3rem);
+  --max-w:      900px;
+  --font-serif: Georgia, 'Times New Roman', Times, serif;
+  --font-mono:  'Courier New', Courier, monospace;
+  --font-sans:  'Trebuchet MS', 'Lucida Grande', Tahoma, sans-serif;
+  --trans:      0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ================================================================
+   SECTION: RESET & BASE
+   ================================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-serif);
+  background: var(--parchment);
+  color: var(--text-main);
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+::selection { background: var(--gold); color: var(--navy); }
+
+/* ================================================================
+   SECTION: NOSCRIPT BANNER
+   ================================================================ */
+.noscript-banner {
+  display: none;
+  background: var(--crimson);
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+}
+
+/* ================================================================
+   SECTION: SPLASH SCREEN
+   Purpose: Animated entry with crest, title, and fade-out.
+   Extend: Swap SVG crest or add video bg.
+   ================================================================ */
+#splash {
+  position: fixed; inset: 0; z-index: 9999;
+  background: var(--navy);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+#splash.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+.splash-crest {
+  width: 90px; height: 90px;
+  margin-bottom: 1.5rem;
+  animation: crestSpin 2s ease forwards;
+}
+@keyframes crestSpin {
+  0%   { transform: rotate(-30deg) scale(0.6); opacity: 0; }
+  60%  { transform: rotate(5deg) scale(1.05); opacity: 1; }
+  100% { transform: rotate(0deg) scale(1); opacity: 1; }
+}
+.splash-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  text-align: center;
+  animation: fadeUp 1s 0.5s both;
+}
+.splash-sub {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--silver);
+  margin-top: 0.5rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  animation: fadeUp 1s 0.8s both;
+}
+.splash-bar {
+  width: 200px; height: 3px;
+  background: var(--navy-light);
+  border-radius: 2px;
+  margin-top: 2rem;
+  overflow: hidden;
+  animation: fadeUp 0.5s 1s both;
+}
+.splash-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  animation: barLoad 1.8s 1s forwards;
+  width: 0;
+}
+@keyframes barLoad { to { width: 100%; } }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================================================
+   SECTION: MAIN APP WRAPPER
+   ================================================================ */
+#app { opacity: 0; transition: opacity 0.6s ease; }
+#app.visible { opacity: 1; }
+
+/* ================================================================
+   SECTION: STICKY NAVIGATION / TOC
+   Purpose: Persistent table of contents with active-section tracking.
+   Extend: Add search toggle, language switcher.
+   ================================================================ */
+#navbar {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--navy);
+  border-bottom: 2px solid var(--gold);
+  padding: 0 var(--gutter);
+  display: flex; align-items: center; gap: 1rem;
+  min-height: 52px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+}
+.nav-brand {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.nav-links {
+  display: flex; gap: 0; list-style: none;
+  overflow-x: auto; flex: 1;
+  scrollbar-width: none;
+}
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-links a {
+  display: block;
+  padding: 0.4rem 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--silver);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color var(--trans), border-color var(--trans);
+  white-space: nowrap;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--gold-light); border-bottom-color: var(--gold); }
+
+.nav-actions { display: flex; gap: 0.5rem; flex-shrink: 0; }
+.nav-btn {
+  background: transparent;
+  border: 1px solid var(--navy-light);
+  color: var(--silver);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--trans);
+  letter-spacing: 0.05em;
+}
+.nav-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ================================================================
+   SECTION: GAMIFICATION HUD
+   Purpose: Track reading progress, sections explored, insights.
+   Extend: Add point categories, leaderboard, streaks.
+   ================================================================ */
+#hud {
+  position: fixed;
+  bottom: 1rem; right: 1rem;
+  z-index: 200;
+  background: var(--navy);
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  min-width: 160px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--silver);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  transition: transform var(--trans);
+}
+#hud.collapsed { transform: translateY(calc(100% - 28px)); }
+.hud-header {
+  display: flex; justify-content: space-between; align-items: center;
+  color: var(--gold); margin-bottom: 0.5rem; cursor: pointer;
+  font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+}
+.hud-row { display: flex; justify-content: space-between; margin: 0.25rem 0; }
+.hud-val { color: var(--gold-light); font-weight: bold; }
+.hud-progress-bar {
+  width: 100%; height: 4px;
+  background: var(--navy-light);
+  border-radius: 2px; margin-top: 0.5rem; overflow: hidden;
+}
+.hud-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--teal), var(--gold));
+  width: 0; transition: width 0.3s ease;
+}
+
+/* ================================================================
+   SECTION: CONSTELLATION VISUALIZER
+   Purpose: Canvas-based policy node visualizer.
+   Extend: Add clickable nodes to jump to sections.
+   ================================================================ */
+#constellation-wrap {
+  background: var(--navy);
+  border: 1px solid var(--navy-light);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 2rem auto;
+  max-width: 700px;
+}
+#constellation-wrap h3 {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--navy-light);
+}
+#constellationCanvas {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* ================================================================
+   SECTION: SEARCH
+   ================================================================ */
+#search-wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 1rem var(--gutter);
+  display: none;
+}
+#search-wrap.open { display: block; }
+#searchInput {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  background: var(--parchment2);
+  border: 2px solid var(--gold);
+  border-radius: var(--radius);
+  color: var(--text-main);
+  outline: none;
+}
+#searchResults {
+  background: #fff;
+  border: 1px solid var(--parchment2);
+  border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  max-height: 300px;
+  overflow-y: auto;
+}
+.search-result-item {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--parchment2);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.search-result-item:hover { background: var(--gold-pale); }
+.search-result-item strong { color: var(--navy); }
+.search-result-item span { color: var(--text-muted); font-size: 0.8rem; }
+
+/* ================================================================
+   SECTION: HERO / PARALLAX HEADER
+   ================================================================ */
+.hero {
+  min-height: 85vh;
+  background: var(--navy);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 4rem var(--gutter);
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 60%, rgba(201,168,76,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 20% 30%, rgba(26,123,123,0.06) 0%, transparent 60%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      rgba(201,168,76,0.04) 39px,
+      rgba(201,168,76,0.04) 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 39px,
+      rgba(201,168,76,0.04) 39px,
+      rgba(201,168,76,0.04) 40px
+    );
+}
+.hero-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+  border: 1px solid var(--teal);
+  padding: 0.3rem 0.8rem;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.6s 0.2s both;
+}
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: var(--gold);
+  line-height: 1.2;
+  max-width: 800px;
+  font-weight: normal;
+  animation: fadeUp 0.7s 0.4s both;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+.hero-subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(0.85rem, 2vw, 1.05rem);
+  color: var(--silver);
+  max-width: 640px;
+  margin-top: 1.25rem;
+  line-height: 1.7;
+  animation: fadeUp 0.7s 0.6s both;
+}
+.hero-meta {
+  display: flex; gap: 2rem;
+  margin-top: 2.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  animation: fadeUp 0.7s 0.8s both;
+  flex-wrap: wrap; justify-content: center;
+}
+.hero-meta span { color: var(--gold-light); }
+.hero-scroll {
+  position: absolute; bottom: 2rem;
+  font-family: var(--font-mono); font-size: 0.68rem;
+  color: var(--silver); letter-spacing: 0.15em;
+  animation: pulse 2s 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(4px); }
+}
+
+/* ================================================================
+   SECTION: PARALLAX DIVIDERS
+   ================================================================ */
+.parallax-divider {
+  height: 120px;
+  background: var(--navy);
+  clip-path: polygon(0 0, 100% 40%, 100% 100%, 0 100%);
+  margin-bottom: -2px;
+}
+.parallax-divider.inv {
+  clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
+}
+
+/* ================================================================
+   SECTION: CONTENT LAYOUT
+   ================================================================ */
+.content-wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 3rem var(--gutter);
+}
+
+/* ================================================================
+   SECTION: POLICY SECTIONS
+   ================================================================ */
+.policy-section {
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.policy-section.visible { opacity: 1; transform: translateY(0); }
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+  color: var(--navy);
+  font-weight: normal;
+  line-height: 1.25;
+  border-left: 4px solid var(--gold);
+  padding-left: 1rem;
+  margin-bottom: 1.25rem;
+}
+.section-lead {
+  font-size: 1.08rem;
+  color: var(--text-main);
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  border-left: 2px solid var(--parchment2);
+  padding-left: 1rem;
+}
+.body-text {
+  font-size: 0.97rem;
+  color: var(--text-main);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* ================================================================
+   SECTION: COLLAPSIBLE PANELS
+   Purpose: Expandable deep-dive content blocks.
+   Extend: Add animation timing, icons per category.
+   ================================================================ */
+.collapsible {
+  border: 1px solid var(--parchment2);
+  border-radius: var(--radius);
+  margin: 1rem 0;
+  overflow: hidden;
+  background: #fff;
+}
+.collapsible-header {
+  width: 100%;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.9rem 1.2rem;
+  background: var(--parchment2);
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--navy);
+  text-align: left;
+  transition: background var(--trans);
+}
+.collapsible-header:hover { background: var(--gold-pale); }
+.collapsible-header[aria-expanded="true"] { background: var(--navy); color: var(--gold); }
+.collapsible-icon {
+  font-size: 1rem;
+  transition: transform var(--trans);
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+.collapsible-header[aria-expanded="true"] .collapsible-icon {
+  transform: rotate(45deg);
+}
+.collapsible-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.collapsible-body.open { max-height: 4000px; }
+.collapsible-inner {
+  padding: 1.25rem 1.5rem;
+  font-size: 0.92rem;
+  line-height: 1.78;
+  color: var(--text-main);
+}
+
+/* ================================================================
+   SECTION: STAT CARDS
+   ================================================================ */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.stat-card {
+  background: var(--navy);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  text-align: center;
+  border-top: 3px solid var(--gold);
+}
+.stat-num {
+  font-family: var(--font-mono);
+  font-size: 1.8rem;
+  color: var(--gold-light);
+  font-weight: bold;
+  line-height: 1;
+}
+.stat-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  color: var(--silver);
+  letter-spacing: 0.06em;
+  margin-top: 0.4rem;
+  text-transform: uppercase;
+}
+
+/* ================================================================
+   SECTION: DATA TABLE
+   ================================================================ */
+.data-table-wrap { overflow-x: auto; margin: 1.5rem 0; }
+table {
+  width: 100%; border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+}
+thead { background: var(--navy); color: var(--gold); }
+thead th { padding: 0.75rem 1rem; text-align: left; font-weight: normal; letter-spacing: 0.06em; }
+tbody tr:nth-child(even) { background: var(--parchment2); }
+tbody tr:hover { background: var(--gold-pale); }
+tbody td { padding: 0.65rem 1rem; border-bottom: 1px solid var(--parchment2); }
+.tag-positive { color: var(--teal); font-weight: bold; }
+.tag-caution { color: #b06000; font-weight: bold; }
+.tag-risk { color: var(--crimson); font-weight: bold; }
+
+/* ================================================================
+   SECTION: CALLOUT BOXES
+   ================================================================ */
+.callout {
+  border-left: 4px solid var(--gold);
+  background: var(--gold-pale);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.93rem;
+  line-height: 1.75;
+}
+.callout.info { border-color: var(--teal); background: #e8f5f5; }
+.callout.warn { border-color: var(--crimson); background: #fdf0f0; }
+.callout strong { display: block; margin-bottom: 0.3rem; font-family: var(--font-sans); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.callout.info strong { color: var(--teal); }
+.callout.warn strong { color: var(--crimson); }
+.callout > strong { color: #7a6020; }
+
+/* ================================================================
+   SECTION: TIMELINE
+   ================================================================ */
+.timeline { padding: 0; list-style: none; margin: 1.5rem 0; position: relative; }
+.timeline::before {
+  content: ''; position: absolute;
+  left: 16px; top: 0; bottom: 0;
+  width: 2px; background: var(--gold);
+}
+.timeline-item { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; position: relative; padding-left: 2.5rem; }
+.timeline-dot {
+  position: absolute; left: 9px; top: 4px;
+  width: 16px; height: 16px;
+  background: var(--gold);
+  border-radius: 50%;
+  border: 3px solid var(--parchment);
+  flex-shrink: 0;
+}
+.timeline-content { flex: 1; }
+.timeline-date {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.2rem;
+}
+.timeline-title { font-weight: bold; font-family: var(--font-sans); color: var(--navy); margin-bottom: 0.3rem; }
+.timeline-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; }
+
+/* ================================================================
+   SECTION: DARK BAND
+   ================================================================ */
+.dark-band {
+  background: var(--navy);
+  color: var(--silver);
+  padding: 3.5rem var(--gutter);
+}
+.dark-band .section-title { color: var(--gold); border-color: var(--gold-light); }
+.dark-band .body-text { color: var(--silver); }
+.dark-band .collapsible { background: var(--navy-mid); border-color: var(--navy-light); }
+.dark-band .collapsible-header { background: var(--navy-mid); color: var(--silver); }
+.dark-band .collapsible-header:hover { background: var(--navy-light); }
+.dark-band .collapsible-header[aria-expanded="true"] { background: var(--navy-light); color: var(--gold); }
+.dark-band .collapsible-inner { color: var(--silver); }
+
+/* ================================================================
+   SECTION: FOOTER
+   ================================================================ */
+footer {
+  background: var(--navy);
+  color: var(--silver);
+  padding: 3rem var(--gutter);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  border-top: 2px solid var(--gold);
+}
+.footer-grid {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+footer h4 { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.75rem; }
+footer p, footer li { line-height: 1.65; color: var(--silver); margin-bottom: 0.35rem; }
+footer ul { list-style: none; padding: 0; }
+.zero-harm-box {
+  max-width: var(--max-w);
+  margin: 2rem auto 0;
+  border: 1px solid var(--teal);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  font-size: 0.8rem;
+  color: #99cccc;
+  line-height: 1.65;
+}
+.zero-harm-box strong { color: var(--teal); display: block; margin-bottom: 0.35rem; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.footer-bottom {
+  max-width: var(--max-w);
+  margin: 1.5rem auto 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--navy-light);
+  display: flex; justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  flex-wrap: wrap; gap: 0.5rem;
+}
+
+/* ================================================================
+   SECTION: PRINT STYLESHEET
+   Purpose: Clean, ink-saving print layout.
+   ================================================================ */
+@media print {
+  #splash, #hud, #navbar, #constellation-wrap,
+  .hero-scroll, .nav-actions, #search-wrap { display: none !important; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .hero { background: #fff; min-height: auto; padding: 2rem 0; }
+  .hero-title { color: #000; font-size: 22pt; }
+  .hero-subtitle, .hero-tag { color: #333; }
+  .section-title { color: #000; border-color: #000; }
+  .dark-band { background: #fff; color: #000; }
+  .dark-band .section-title { color: #000; }
+  .dark-band .body-text { color: #333; }
+  .stat-card { background: #eee; border: 1px solid #ccc; }
+  .stat-num, .stat-label { color: #000; }
+  .collapsible-body { max-height: none !important; }
+  .policy-section { opacity: 1 !important; transform: none !important; }
+  a::after { content: ' (' attr(href) ')'; font-size: 8pt; color: #666; }
+}
+
+/* ================================================================
+   SECTION: RESPONSIVE
+   ================================================================ */
+@media (max-width: 600px) {
+  .nav-links a { padding: 0.4rem 0.5rem; font-size: 0.68rem; }
+  #hud { bottom: 0.5rem; right: 0.5rem; min-width: 140px; }
+}
+</style>
+</head>
+<body>
+
+<div class="noscript-banner" role="alert">
+  JavaScript is disabled. This document is fully readable, but interactive features (search, HUD, constellation, collapse) require JavaScript.
+</div>
+
+<!-- ============================================================
+     SPLASH SCREEN
+     ============================================================ -->
+<div id="splash" role="status" aria-label="Loading document">
+  <svg class="splash-crest" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="45,5 55,30 82,30 60,48 68,75 45,58 22,75 30,48 8,30 35,30" fill="none" stroke="#c9a84c" stroke-width="2"/>
+    <polygon points="45,15 52,32 70,32 56,43 61,62 45,51 29,62 34,43 20,32 38,32" fill="rgba(201,168,76,0.15)" stroke="#e8cc7a" stroke-width="1"/>
+    <circle cx="45" cy="45" r="8" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+    <text x="45" y="50" text-anchor="middle" font-size="9" fill="#c9a84c" font-family="Georgia,serif">CA</text>
+  </svg>
+  <div class="splash-title">Canadian Tax Reform</div>
+  <div class="splash-sub">Multi-PhD Policy Analysis · 2025</div>
+  <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+</div>
+
+<!-- ============================================================
+     MAIN APP
+     ============================================================ -->
+<div id="app">
+
+  <!-- NAVIGATION -->
+  <nav id="navbar" role="navigation" aria-label="Table of contents">
+    <div class="nav-brand">CA Tax Reform</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#section-baseline">Baseline</a></li>
+      <li><a href="#section-immediate">Immediate Cuts</a></li>
+      <li><a href="#section-gst">GST Reform</a></li>
+      <li><a href="#section-revenue">Revenue</a></li>
+      <li><a href="#section-structural">Structural</a></li>
+      <li><a href="#section-spending">Spending</a></li>
+      <li><a href="#section-international">International</a></li>
+      <li><a href="#section-roadmap">Roadmap</a></li>
+      <li><a href="#section-risks">Risks</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-btn" id="searchToggle" title="Toggle search (S)" aria-label="Search">⌕ Search</button>
+      <button class="nav-btn" onclick="window.print()" title="Print" aria-label="Print">⎙</button>
+    </div>
+  </nav>
+
+  <!-- SEARCH -->
+  <div id="search-wrap" role="search" aria-label="Document search">
+    <input type="search" id="searchInput" placeholder="Search policy options, terms, concepts…" aria-label="Search content" autocomplete="off">
+    <div id="searchResults" role="listbox" aria-label="Search results"></div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero" id="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-tag">Fiscal Policy — Actionable Intelligence</div>
+    <h1 class="hero-title">Reversing the Tax Burden:<br><em>An Exhaustive Policy Framework</em><br>for Canadian Reform</h1>
+    <p class="hero-subtitle">A multi-disciplinary analysis spanning public finance, political economy, and systems design — with actionable pathways to reduce federal income tax below 20% and restructure GST by year-end.</p>
+    <div class="hero-meta">
+      <div>Level <span>PhD / Expert</span></div>
+      <div>Sections <span>9</span></div>
+      <div>Reform Options <span>42+</span></div>
+      <div>Implementation Phases <span>4</span></div>
+    </div>
+    <div class="hero-scroll">↓ SCROLL TO EXPLORE</div>
+  </header>
+
+  <div class="parallax-divider"></div>
+
+  <!-- HUD -->
+  <div id="hud" role="complementary" aria-label="Reading progress HUD">
+    <div class="hud-header" id="hudToggle" tabindex="0" role="button" aria-label="Toggle HUD">
+      <span>⬡ HUD</span><span id="hudToggleIcon">▲</span>
+    </div>
+    <div id="hudBody">
+      <div class="hud-row"><span>Progress</span><span class="hud-val" id="hudProgress">0%</span></div>
+      <div class="hud-row"><span>Sections</span><span class="hud-val" id="hudSections">0 / 9</span></div>
+      <div class="hud-row"><span>Panels opened</span><span class="hud-val" id="hudPanels">0</span></div>
+      <div class="hud-row"><span>Score</span><span class="hud-val" id="hudScore">0 pts</span></div>
+      <div class="hud-progress-bar"><div class="hud-progress-fill" id="hudBar"></div></div>
+    </div>
+  </div>
+
+  <!-- CONSTELLATION -->
+  <div class="content-wrap">
+    <div id="constellation-wrap" aria-label="Policy interconnection visualizer">
+      <h3>◈ Policy Node Constellation — Interconnection Map</h3>
+      <canvas id="constellationCanvas" width="700" height="280" role="img" aria-label="Animated constellation showing connections between policy reform areas"></canvas>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SECTION 1: CURRENT BASELINE
+       ============================================================ -->
+  <div class="content-wrap">
+    <section class="policy-section" id="section-baseline" data-section="1">
+      <div class="section-label">§ 01 — Foundation</div>
+      <h2 class="section-title">Current Federal Tax Landscape: The Baseline</h2>
+      <p class="section-lead">Before designing credible reform, policymakers must understand the precise architecture of the existing system — its rate schedules, fiscal dependencies, and distributional characteristics.</p>
+      <p class="body-text">Canada's federal personal income tax operates on five marginal brackets. As of 2025, Bill C-70 ("Making Life More Affordable Act") reduced the first bracket from 15% to 14% effective July 1, 2025, creating a blended rate of approximately 14.5% for the 2025 tax year — the first rate cut since 2001. This targeted reduction affects the first ~$57,375 of taxable income (above the Basic Personal Amount).</p>
+
+      <div class="stat-grid">
+        <div class="stat-card"><div class="stat-num">14.5%</div><div class="stat-label">Blended 1st bracket 2025</div></div>
+        <div class="stat-card"><div class="stat-num">$16,129</div><div class="stat-label">Basic Personal Amount 2025</div></div>
+        <div class="stat-card"><div class="stat-num">5%</div><div class="stat-label">Federal GST Rate</div></div>
+        <div class="stat-card"><div class="stat-num">33%</div><div class="stat-label">Top federal marginal rate</div></div>
+        <div class="stat-card"><div class="stat-num">~$235B</div><div class="stat-label">Fed PIT revenue (est.)</div></div>
+      </div>
+
+      <div class="data-table-wrap">
+        <table aria-label="2025 Federal income tax brackets">
+          <thead>
+            <tr><th>Taxable Income Range</th><th>Federal Rate (2025)</th><th>Revenue Weight</th><th>Political Sensitivity</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>$0 – $57,375</td><td>14% (blended ~14.5%)</td><td class="tag-positive">Very High</td><td>High — middle class</td></tr>
+            <tr><td>$57,376 – $114,750</td><td>20.5%</td><td class="tag-positive">High</td><td>High — professionals</td></tr>
+            <tr><td>$114,751 – $158,519</td><td>26%</td><td class="tag-caution">Medium</td><td>Moderate</td></tr>
+            <tr><td>$158,520 – $220,000</td><td>29%</td><td class="tag-caution">Medium</td><td>Lower</td></tr>
+            <tr><td>Over $220,000</td><td>33%</td><td class="tag-risk">Lower (but concentrated)</td><td>High political optics</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="collapsible">
+        <button class="collapsible-header" aria-expanded="false">
+          Deep Dive: How Canada's Tax-to-GDP Ratio Compares <span class="collapsible-icon">+</span>
+        </button>
+        <div class="collapsible-body">
+          <div class="collapsible-inner">
+            <p>Canada's total tax burden (federal + provincial + local) sits near 34% of GDP according to OECD data — below the OECD average of ~34.2%, but well above the United States (~27%). Federal personal income tax alone represents approximately 8–9% of GDP, making it the single largest revenue source.</p>
+            <p style="margin-top:0.75rem;">Critically, Canada's <em>marginal effective tax rate</em> (METR) — which includes phase-outs of credits and benefits — can exceed nominal bracket rates dramatically for middle-income Canadians, creating effective rates of 40–70% in income ranges where benefits are clawed back. This is a design flaw that is independent of statutory rates and must be addressed simultaneously with rate reform.</p>
+            <p style="margin-top:0.75rem;"><strong>Key insight:</strong> Lowering stated bracket rates without addressing benefit clawbacks delivers incomplete relief. True income tax reform requires parallel redesign of the benefit-tax integration architecture.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="collapsible">
+        <button class="collapsible-header" aria-expanded="false">
+          GST Architecture: History and Current Structure <span class="collapsible-icon">+</span>
+        </button>
+        <div class="collapsible-body">
+          <div class="collapsible-inner">
+            <p>The Goods and Services Tax was introduced in 1991 at 7%, replacing the old Manufacturer's Sales Tax. It was reduced to 6% in 2006 and 5% in 2008. Harmonized with provincial sales taxes in several provinces (ON, BC, NS, NB, NL, PEI) to create the HST. Quebec operates a parallel QST system at 9.975%.</p>
+            <p style="margin-top:0.75rem;">The GST generates approximately $45–50 billion annually in federal revenue. Unlike income tax, it is a broad-based consumption tax with relatively few exemptions (basic groceries, prescription drugs, medical devices, most health/education services). The current GST/HST credit partially offsets the regressive nature of consumption taxation for low-income households.</p>
+            <p style="margin-top:0.75rem;"><strong>Reform design principle:</strong> Any GST reduction or restructuring must be fiscally offset or accompanied by equivalent spending reduction, or it risks structural deficit expansion. The 2008 cut from 6% to 5% was widely criticized by economists for creating unnecessary fiscal pressure without proportionate productivity benefits.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- DARK BAND: IMMEDIATE OPTIONS -->
+  <div class="dark-band">
+    <div style="max-width: var(--max-w); margin: 0 auto;">
+      <section class="policy-section" id="section-immediate" data-section="2">
+        <div class="section-label" style="color:var(--teal)">§ 02 — Immediate Action</div>
+        <h2 class="section-title">Immediate Rate Reduction Pathways</h2>
+        <p class="section-lead" style="border-color:var(--navy-light)">Options actionable within a single budget cycle, requiring only legislative amendments to the Income Tax Act — with revenue offsets to preserve fiscal balance.</p>
+
+        <div class="collapsible">
+          <button class="collapsible-header" aria-expanded="false">
+            Option A: Accelerated Marginal Rate Compression <span class="collapsible-icon">+</span>
+          </button>
+          <div class="collapsible-body">
+            <div class="collapsible-inner">
+              <p><strong>Mechanism:</strong> Amend Schedule I of the Income Tax Act to reduce brackets 1 and 2 immediately. Target: bracket 1 to 12%, bracket 2 to 18% — bringing all Canadians earning under ~$115K to a sub-20% effective rate before provincial taxes.</p>
+              <p style="margin-top:0.75rem;"><strong>Fiscal cost:</strong> Approximately $18–25B annually depending on income growth. Must be offset via spending reductions or alternative revenue.</p>
+              <p style="margin-top:0.75rem;"><strong>Legislative pathway:</strong> Ways and Means Motion → Budget Implementation Act. Can be enacted in a single budget cycle if fiscal framework is prepared. Emergency expedited measures theoretically possible under a confidence government.</p>
+              <p style="margin-top:0.75rem;"><strong>PhD-level caveat:</strong> Rate compression without bracket indexation reform creates fiscal creep. Ensure CPI indexation provisions in ITA s.117.1 are maintained or enhanced. Consider wage-indexed BPA expansion simultaneously to prevent real-bracket creep from diluting rate cuts.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="collapsible">
+          <button class="collapsible-header" aria-expanded="false">
+            Option B: Massive Basic Personal Amount Expansion <span class="collapsible-icon">+</span>
+          </button>
+          <div class="collapsible-body">
+            <div class="collapsible-inner">
+              <p><strong>Mechanism:</strong> Increase the BPA from ~$16,129 to $25,000–$30,000 in a single step (or phased over 2 years). At $25,000, a worker earning $45,000 annually pays federal income tax on only $20,000 of income — a dramatic effective rate reduction without technically changing marginal rates.</p>
+              <p style="margin-top:0.75rem;"><strong>Distributional impact:</strong> Highly progressive at low-to-middle incomes. Disproportionately benefits workers earning $20,000–$60,000. Does not reduce taxes for those in top brackets unless combined with rate changes. Politically palatable across party lines.</p>
+              <p style="margin-top:0.75rem;"><strong>Fiscal cost:</strong> Each $1,000 increase in BPA costs approximately $1.5–2B in foregone revenue. Moving from $16K to $25K = roughly $13–18B annual revenue impact.</p>
+              <p style="margin-top:0.75rem;"><strong>Design nuance:</strong> The phase-out mechanism for higher earners (introduced in 2020 and partially reversed) should be fully eliminated — phase-outs create high METRs that undermine the policy goal. A clean, universal BPA is administratively simpler and creates no poverty trap dynamics.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="collapsible">
+          <button class="collapsible-header" aria-expanded="false">
+            Option C: Eliminate Bracket 2 — Flat Zone to $120K <span class="collapsible-icon">+</span>
+          </button>
+          <div class="collapsible-body">
+            <div class="collapsible-inner">
+              <p><strong>Mechanism:</strong> Merge brackets 1 and 2 into a single flat rate of 16–18% on income from $0 to ~$115,000. This covers over 90% of Canadian taxpayers within a single sub-20% federal rate band.</p>
+              <p style="margin-top:0.75rem;"><strong>Rationale:</strong> The existing 5.5 percentage point jump from bracket 1 to bracket 2 (14% → 20.5%) is unusually steep by international standards and creates a sharp disincentive at the income level where many skilled workers operate. Flattening this creates a more neutral incentive structure.</p>
+              <p style="margin-top:0.75rem;"><strong>International precedent:</strong> Several Nordic countries, despite higher overall tax burdens, use flatter structures within the bottom 80% of earners to preserve labour supply incentives. The progressivity at the top is maintained via surtaxes on income over $200K.</p>
+              <p style="margin-top:0.75rem;"><strong>Fiscal cost:</strong> Heavily depends on chosen flat rate. At 18%: approximately $8–12B annual revenue reduction. Offset options: digital services revenue, luxury consumption surcharges, or spending efficiency.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="collapsible">
+          <button class="collapsible-header" aria-expanded="false">
+            Option D: Employment Income Exemption (Zero-Tax Zone) <span class="collapsible-icon">+</span>
+          </button>
+          <div class="collapsible-body">
+            <div class="collapsible-inner">
+              <p><strong>Mechanism:</strong> Create a first-dollar employment income exemption of $10,000–$15,000 on top of the BPA, applicable only to earned employment income (T4). This effectively creates a tax-free earnings zone of $26,000–$31,000 for working Canadians.</p>
+              <p style="margin-top:0.75rem;"><strong>Policy rationale:</strong> Targets labour supply directly. The UK operates a similar "Employment Allowance" model. Excludes investment income, ensuring the relief is pro-work rather than broadly pro-capital. Highly popular politically.</p>
+              <p style="margin-top:0.75rem;"><strong>Technical vehicle:</strong> ITA s.110 deductions or s.118 credits. A refundable credit version would also benefit low-income earners who currently have no federal tax owing — extending the policy's reach to the working poor.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="collapsible">
+          <button class="collapsible-header" aria-expanded="false">
+            Option E: Clawback Architecture Reform — Addressing Hidden Effective Rates <span class="collapsible-icon">+</span>
+          </button>
+          <div class="collapsible-body">
+            <div class="collapsible-inner">
+              <p><strong>The hidden problem:</strong> Canada's income-tested benefit system creates invisible "tax rate" peaks. The Canada Child Benefit, GST Credit, OAS clawback, and provincial supplements simultaneously phase out in income ranges between $32K–$90K. Stacked together, these clawbacks can create marginal effective tax rates of 60–90% on additional income earned — massively deterring work effort for exactly the population policymakers claim to help.</p>
+              <p style="margin-top:0.75rem;"><strong>Solution:</strong> Rationalize phase-out schedules. Separate the taper zones so no two major programs claw back simultaneously. Extend phase-out income ranges to reduce slope. Introduce a guaranteed floor below which no combined clawback rate exceeds 30%.</p>
+              <p style="margin-top:0.75rem;"><strong>This is arguably the highest-impact, lowest-revenue-cost reform available</strong> — it costs nothing in new revenue but dramatically improves effective marginal incentives for low-to-middle income earners. Academic literature (Milligan, Stabile, Smart) consistently identifies this as the top priority for Canadian fiscal design.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout info" style="background:rgba(26,123,123,0.12); border-color:var(--teal);">
+          <strong>Implementation Note</strong>
+          Combining Options B + E (BPA expansion + clawback rationalization) delivers the largest per-dollar effective tax reduction for 60% of Canadian families without requiring new revenue. Options A + C are higher-cost but visible and politically resonant. Sequencing matters: implement E first (zero fiscal cost), then B, then A/C with revenue offsets.
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- SECTION: GST REFORM -->
+  <div class="content-wrap">
+    <section class="policy-section" id="section-gst" data-section="3">
+      <div class="section-label">§ 03 — Consumption Tax</div>
+      <h2 class="section-title">GST Restructuring Options</h2>
+      <p class="section-lead">The GST is not monolithic — it can be restructured, rate-differentiated, rebated, or partially replaced without full elimination, depending on fiscal room and policy priorities.</p>
+
+      <div class="collapsible">
+        <button class="collapsible-header" aria-expanded="false">
+          Option F: Rate Reduction to 3% with Base Broadening <span class="collapsible-icon">+</span>
+        </button>
+        <div class="collapsible-body">
+          <div class="collapsible-inner">
+            <p><strong>Mechanism:</strong> Reduce the federal GST rate from 5% to 3% while simultaneously eliminating many current exemptions (financial services, used residential real estate) and capturing digital/platform services more aggressively. The net fiscal impact can be partially neutralized through base broadening.</p>
+            <p style="margin-top:0.75rem;"><strong>Economic principle:</strong> Broad-based, low-rate consumption taxes are economically superior to narrow-based, higher-rate taxes. New Zealand's GST at 15% with virtually no exemptions generates proportionally more revenue with less economic distortion than Canada's 5% with extensive exemptions. Base-broadening + rate-cut is defensible on efficiency grounds.</p>
+            <p style="margin-top:0.75rem;"><strong>Net fiscal cost:</strong> Approximately $25–30B gross reduction offset by $8–12B from base broadening = net ~$15–22B annual cost. Requires substantial expenditure rationalization.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="collapsible">
+        <button class="collapsible-header" aria-expanded="false">
+          Option G: Two-Rate GST Structure (Essential/Standard) <span class="collapsible-icon">+</span>
+        </button>
+        <div class="collapsible-body">
+          <div class="collapsible-inner">
+            <p><strong>Mechanism:</strong> Introduce a differentiated GST: 0% on essential goods (food, children's clothing, medications, public transit), 3% on standard consumption, and 8–10% on luxury goods (vehicles over $80K, jewellery, recreational watercraft, private aviation). This mirrors the EU VAT directive model used across most OECD countries.</p>
+            <p style="margin-top:0.75rem;"><strong>Distributional advantage:</strong> Eliminates the regressive character of consumption taxation for low-income households. Zero-rating essentials has the same practical effect as a substantial income tax credit for families spending high proportions of income on food and necessities.</p>
+            <p style="margin-top:0.75rem;"><strong>Administrative challenge:</strong> Differentiated rates increase compliance complexity for businesses. The CRA requires updated guidance and systems. HST provinces must negotiate amendments to Canada Revenue Administration Act and harmonization agreements. Timeline: 12–18 months for full implementation.</p>
+            <p style="margin-top:0.75rem;"><strong>Political viability:</strong> Very high. Multi-party consensus exists for removing GST from groceries (NDP, Green, portions of Liberal and Conservative platforms). A luxury surcharge can be paired as politically acceptable to different constituencies.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="collapsible">
+        <button class="collapsible-header" aria-expanded="false">
+          Option H: GST Fully Refundable Credit as Effective Rate Elimination <span class="collapsible-icon">+</span>
+        </button>
+        <div class="collapsible-body">
+          <div class="collapsible-inner">
+            <p><strong>Mechanism:</strong> Rather than reducing the rate, massively expand the GST/HST Credit into a fully refundable "Consumption Allowance" equal to estimated GST paid by income decile. For a family in the bottom 40% of income, this effectively makes their GST burden net-zero.</p>
+            <p style="margin-top:0.75rem;"><strong>Efficiency argument:</strong> Maintaining a uniform 5% rate (or increasing to 6% with full credit expansion) is more economically efficient than a multi-rate system — fewer distortions, simpler administration, but equivalent distributional outcomes via the credit side.</p>
+            <p style="margin-top:0.75rem;"><strong>Revenue neutrality:</strong> This can be largely revenue-neutral if the credit expansion is funded by the efficiency gains from base broadening and the elimination of complex multi-rate administration. A rate increase to 6% combined with a robust credit system could be revenue-positive while effectively zero-rating the bottom 40%.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="collapsible">
+        <button class="collapsible-header" aria-expanded="false">
+          Option I: Federal Withdrawal from Consumption Taxation (Radical Decentralization) <span class="collapsible-icon">+</span>
+        </button>
+        <div class="collapsible-body">
+          <div class="collapsible-inner">
+            <p><strong>Concept:</strong> The federal government vacates the GST entirely and transfers the tax room to provinces through a coordinated reduction in federal transfers, allowing provinces to design their own consumption tax models. This is consistent with fiscal decentralization principles and gives provinces maximum flexibility.</p>
+            <p style="margin-top:0.75rem;"><strong>Constitutional dimension:</strong> Under s.92 of the Constitution Act, provinces have broad taxation powers. A federal withdrawal from consumption taxation is constitutionally unproblematic. The challenge is ensuring equalization formula adjustments prevent Atlantic and Prairie provinces from being fiscally stranded.</p>
+            <p style="margin-top:0.75rem;"><strong>Precedent:</strong> Canada already vacated corporate income tax room during wartime and partially transferred it back post-war. This precedent establishes the mechanics of tax room transfers.</p>
+            <p style="margin-top:0.75rem;"><strong>Timeline:</strong> Requires 3–5 year transition with provincial negotiation. Not achievable by year-end but can be announced as a multi-year policy commitment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- DARK BAND: REVENUE -->
+  <div class="dark-band">
+    <div style="max-width: var(--max-w); margin: 0 auto;">
+      <section class="policy-section" id="section-revenue" data-section="4">
+        <div class="section-label" style="color:var(--teal)">§ 04 — Revenue Architecture</div>
+        <h2 class="section-title">Revenue Replacement & Diversification</h2>
+        <p class="section-lead" style="border-color:var(--navy-light)">Rate reduction without revenue replacement produces deficit expansion. These mechanisms provide the fiscal offset required to make large-scale income tax cuts sustainable.</p>
+
+        <div class="collapsible">
+          <button class="collapsible-header" aria-expanded="false">
+            Option J: Land Value Taxation (LVT) as Primary Revenue Shift <span class="collapsible-icon">+</span>
+          </button>
+          <div class="collapsible-body">
+            <div class="collapsible-inner">
+              <p><strong>Theory:</strong> Henry George's single tax concept — tax the unimproved value of land, not the improvements on it. LVT is the only tax identified by virtually all schools of economic thought (Georgist, neoclassical, post-Keynesian) as economically non-distortionary. Unlike income tax, which penalizes productive activity, LVT captures economic rent created by public investment and community proximity.</p>
+              <p style="margin-top:0.75rem;"><strong>Canadian application:</strong> Canada's total land value is estimated at $5–8 trillion. A 1% annual LVT would generate $50–80B — sufficient to eliminate the two lowest income tax brackets entirely. A 2% LVT could theoretically replace all federal personal income tax revenue.</p>
+              <p style="margin-top:0.75rem;"><strong>Implementation vehicle:</strong> Constitutional jurisdiction is provincial (property taxation). Federal participation requires a federal-provincial framework: either a federal LVT with provincial administration (analogous to CPP) or equalization adjustments to incentivize provinces to shift from income to land taxation.</p>
+              <p style="margin-top:0.75rem;"><strong>Political economy:</strong> Strong resistance from property-owning interests, including homeowner-heavy ridings in suburban Ontario and BC. However, the housing crisis has dramatically shifted public opinion: LVT directly addresses speculation and land banking by making vacant land holding costly. This creates a new political coalition supporting LVT (housing advocates + fiscal reformers).</p>
+              <p style="margin-top:0.75rem;"><strong>Transition mechanism:</strong> Revenue-neutral phase-in over 10 years: each $1B of LVT revenue enables $1B of income tax reduction. Alberta's existing municipal machinery assessment system provides administrative precedent.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="collapsible">
+          <button class="collapsible-header" aria-expanded="false">
+            Option K: Digital Services Tax & Platform Economy Revenue <span class="collapsible-icon">+</span>
+          </button>
+          <div class="collapsible-body">
+            <div class="collapsible-inner">
+              <p><strong>Existing framework:</strong> Canada's Digital Services Tax Act (DSTA), enacted 2024, imposes a 3% tax on in-scope digital services revenues (online marketplaces, social media, digital advertising, user data). The tax applies retroactively from January 1, 2022, for companies with revenues exceeding $1.1B globally and $20M in Canada.</p>
+              <p style="margin-top:0.75rem;"><strong>Revenue projection:</strong> The DST is projected to generate $4.5–7B annually, with retroactive claims potentially adding $2–3B. This is modest in the context of income tax reform but meaningful as part of a diversification portfolio.</p>
+              <p style="margin-top:0.75rem;"><strong>Expansion options:</strong> Broaden the DST base to include cloud computing (SaaS/IaaS/PaaS), algorithmic trading services, and data brokerage. A 5% DST on expanded base could generate $12–18B annually without touching domestic businesses.</p>
+              <p style="margin-top:0.75rem;"><strong>International coordination:</strong> The OECD/G20 Pillar One framework for taxing digital multinationals may supersede unilateral DSTs. Canada should design its DST to be creditable under the OECD framework to avoid double-taxation disputes with trade partners, particularly the United States.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="collapsible">
+          <button class="collapsible-header" aria-expanded="false">
+            Option L: Natural Resource Revenue Capture (Sovereign Resource Fund) <span class="collapsible-icon">+</span>
+          </button>
+          <div class="collapsible-body">
+            <div class="collapsible-inner">
+              <p><strong>Norway model:</strong> Norway's Government Pension Fund Global (Oljefondet) captures petroleum rents through a 78% petroleum profits tax and invests them in a sovereign wealth fund, which funds ~20% of Norway's annual government budget — allowing Norway to maintain very competitive income tax rates despite high public services.</p>
+              <p style="margin-top:0.75rem;"><strong>Canadian application:</strong> Canada's federal government receives only modest royalty streams from oil and gas (primarily provincial jurisdiction). A federal framework to capture a share of resource rents — particularly from new critical mineral extraction (lithium, cobalt, nickel essential for EV battery supply chains) — could establish a Permanent Fund similar to Alaska's.</p>
+              <p style="margin-top:0.75rem;"><strong>Constitutional challenge:</strong> Natural resources are primarily provincial (s.92A). A federal approach requires creative mechanisms: federal royalties on offshore resources, federal corporate income tax surtax on resource extraction, or a negotiated resource revenue-sharing agreement analogous to equalization.</p>
+              <p style="margin-top:0.75rem;"><strong>Long-term potential:</strong> Canada's critical mineral endowment — the second largest globally — could generate $30–50B annually in resource rents at scale. This is transformative for fiscal space over a 20-year horizon, enabling sustained income tax reductions without service cuts.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="collapsible">
+          <button class="collapsible-header" aria-expanded="false">
+            Option M: Financial Transaction Tax (Targeted Speculation Levy) <span class="collapsible-icon">+</span>
+          </button>
+          <div class="collapsible-body">
+            <div class="collapsible-inner">
+              <p><strong>Mechanism:</strong> A small tax (0.1–0.5%) on equity, bond, and derivative transactions. Applied only to speculative/high-frequency trading (using holding period thresholds), not to pension fund rebalancing or long-term retail investment.</p>
+              <p style="margin-top:0.75rem;"><strong>Revenue:</strong> France and the UK operate FTTs generating €2–3B and £4B respectively. Canada's financial markets are smaller but a well-designed 0.1% equity FTT could generate $5–10B annually.</p>
+              <p style="margin-top:0.75rem;"><strong>Economic controversy:</strong> FTTs reduce market liquidity and may widen bid-ask spreads. Academic literature is divided. The key design principle is to target high-frequency algorithmic speculation (sub-second trades) while exempting market-making and long-term investment — analogous to the UK Stamp Duty Reserve Tax structure.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="collapsible">
+          <button class="collapsible-header" aria-expanded="false">
+            Option N: Carbon Pricing Revenue Recycling as Tax Cut Offset <span class="collapsible-icon">+</span>
+          </button>
+          <div class="collapsible-body">
+            <div class="collapsible-inner">
+              <p><strong>Current state:</strong> Canada's carbon price (Output-Based Pricing System / fuel charge) generates revenue currently recycled via the Canada Carbon Rebate (formerly Climate Action Incentive). The Supreme Court upheld federal carbon pricing in 2021.</p>
+              <p style="margin-top:0.75rem;"><strong>Revenue recycling redesign:</strong> Instead of per-capita rebates, carbon revenue ($15–20B annually at $65/tonne) could be explicitly earmarked as an income tax rate reduction credit — making the "carbon dividend = income tax cut" framing explicit. This rebrands carbon pricing as a tax-swap mechanism rather than a net burden.</p>
+              <p style="margin-top:0.75rem;"><strong>Political strategy:</strong> British Columbia's carbon tax (2008) was explicitly revenue-neutral, with corresponding income tax and corporate tax cuts. This design had broad public support until the neutrality was abandoned. Restoring explicit revenue neutrality is both economically sound and politically viable.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- SECTION: STRUCTURAL TRANSFORMATION -->
+  <div class="content-wrap">
+    <section class="policy-section" id="section-structural" data-section="5">
+      <div class="section-label">§ 05 — System Redesign</div>
+      <h2 class="section-title">Transformative System Redesign</h2>
+      <p class="section-lead">Medium-to-long-term structural reforms that reimagine the tax architecture itself — not merely adjusting rates within the existing framework.</p>
+
+      <div class="collapsible">
+        <button class="collapsible-header" aria-expanded="false">
+          Option O: Flat Tax with Universal Dividend (Negative Income Tax Hybrid) <span class="collapsible-icon">+</span>
+        </button>
+        <div class="collapsible-body">
+          <div class="collapsible-inner">
+            <p><strong>Design:</strong> Replace the entire graduated income tax schedule with a single flat rate of 18–20% on all income above a generous tax-free threshold (~$30,000), combined with a Universal Basic Allowance (UBA) paid to all adults. The UBA effectively creates a negative income tax for those below the threshold — they receive a transfer rather than paying tax.</p>
+            <p style="margin-top:0.75rem;"><strong>Milton Friedman's original NIT design:</strong> Every adult receives a base payment equal to the flat rate × the exemption amount. At 20% flat rate and $30,000 exemption: base payment = $6,000/year. Those earning above $30K pay a net of 20% on the excess. Those below receive a subsidy declining to zero at $30K.</p>
+            <p style="margin-top:0.75rem;"><strong>Fiscal model:</strong> Revenue neutrality depends critically on rate and threshold choices. A 20% flat rate with $30K exemption approximately matches current federal revenue when combined with elimination of most credits and deductions. Administrative simplification savings (~$2–4B) contribute to fiscal offset.</p>
+            <p style="margin-top:0.75rem;"><strong>Distributional concern:</strong> Without the UBA component, flat taxes are regressive versus the current graduated system. The negative income tax component is essential to maintain distributional equity. This is not ideologically "flat tax" in the Reaganite sense — it is a comprehensive income floor + universal low-rate system.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="collapsible">
+        <button class="collapsible-header" aria-expanded="false">
+          Option P: Expenditure Tax (Consumed Income Tax) <span class="collapsible-icon">+</span>
+        </button>
+        <div class="collapsible-body">
+          <div class="collapsible-inner">
+            <p><strong>Mechanism:</strong> Tax income minus savings, rather than gross income. The Meade Committee (UK, 1978) comprehensively designed this as the most economically neutral personal tax — it taxes consumption rather than income, eliminating the double taxation of savings that distorts investment decisions.</p>
+            <p style="margin-top:0.75rem;"><strong>Canadian application:</strong> The RRSP/TFSA system partially approximates an expenditure tax for retirement savings. Generalizing this to all savings — allowing unlimited deduction of net additions to savings/investments — would transform the income tax into a consumption-based tax while maintaining progressivity through graduated rates on spending.</p>
+            <p style="margin-top:0.75rem;"><strong>Practical advantage:</strong> Does not require replacing CRA administrative infrastructure. The amendment modifies ITA section 60 deductions and creates a new "savings deduction account." Australia and the UK have moved partially toward this model through ISA-equivalent structures.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="collapsible">
+        <button class="collapsible-header" aria-expanded="false">
+          Option Q: Dual Income Tax (Nordic Model Adaptation) <span class="collapsible-icon">+</span>
+        </button>
+        <div class="collapsible-body">
+          <div class="collapsible-inner">
+            <p><strong>Model:</strong> Tax labour income at graduated progressive rates; tax capital income (dividends, interest, capital gains) at a lower, flat rate. The Nordic countries (Sweden, Denmark, Norway, Finland) introduced this design in the early 1990s and it has become the most admired tax reform of the late 20th century.</p>
+            <p style="margin-top:0.75rem;"><strong>Rationale:</strong> Capital is highly mobile internationally; aggressive taxation drives it to tax havens. Labour is relatively immobile; progressive rates remain viable. By separating the two tax bases and applying optimal rates independently, the DIT achieves better outcomes on both equity and efficiency dimensions than unified income taxation.</p>
+            <p style="margin-top:0.75rem;"><strong>Canadian prototype:</strong> Canada already has a semi-DIT through the dividend tax credit and capital gains inclusion rate (currently 2/3 inclusion, up from 1/2). Formalizing this into an explicit DIT framework — with a clean 15% capital income flat rate and reformed labour income schedule achieving sub-20% for most earners — would be a coherent architectural choice.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="collapsible">
+        <button class="collapsible-header" aria-expanded="false">
+          Option R: Destination-Based Cash Flow Tax (DBCFT) <span class="collapsible-icon">+</span>
+        </button>
+        <div class="collapsible-body">
+          <div class="collapsible-inner">
+            <p><strong>Theory:</strong> Proposed by Alan Auerbach (UC Berkeley) and adopted in modified form in the 2017 US Tax Cuts and Jobs Act as "Base Erosion and Anti-Abuse Tax." The DBCFT taxes corporate cash flows (revenues minus labour costs, minus investment — but not minus interest) on a destination basis (where sales occur, not where production occurs).</p>
+            <p style="margin-top:0.75rem;"><strong>Why it matters for personal income tax:</strong> DBCFT generates substantially higher corporate revenue by eliminating debt-biased investment and profit-shifting to tax havens. This corporate revenue increase — estimated at $10–20B annually for Canada — creates fiscal space to reduce personal income tax rates without aggregate revenue loss.</p>
+            <p style="margin-top:0.75rem;"><strong>WTO concern:</strong> Border adjustability of DBCFT raises WTO compatibility questions, though legal analysis (Avi-Yonah, Clausing) suggests it can be structured compatibly. Canada should monitor the OECD Pillar Two minimum tax (15% global minimum corporate tax, now enacted in Canada) interactions carefully.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- DARK BAND: SPENDING -->
+  <div class="dark-band">
+    <div style="max-width: var(--max-w); margin: 0 auto;">
+      <section class="policy-section" id="section-spending" data-section="6">
+        <div class="section-label" style="color:var(--teal)">§ 06 — Fiscal Space</div>
+        <h2 class="section-title">Expenditure Reform: Creating Fiscal Space</h2>
+        <p class="section-lead" style="border-color:var(--navy-light)">Revenue-neutral tax reform requires either new revenue sources or spending rationalization. These options identify where fiscal space can be created without compromising essential services.</p>
+
+        <div class="collapsible">
+          <button class="collapsible-header" aria-expanded="false">
+            Option S: Zero-Based Budgeting for All Federal Departments <span class="collapsible-icon">+</span>
+          </button>
+          <div class="collapsible-body">
+            <div class="collapsible-inner">
+              <p><strong>Mechanism:</strong> Require every federal department and agency to justify its entire budget from zero each 3-year cycle, rather than the current incremental approach (last year's base + adjustments). Identify programs that persist despite evidence of ineffectiveness or outdated mandate.</p>
+              <p style="margin-top:0.75rem;"><strong>Fiscal potential:</strong> Historical ZBB exercises in US states and OECD countries typically identify 8–15% of discretionary spending as low-value or eliminable without service deterioration. Applied to Canada's ~$130B non-transfer, non-debt-service federal discretionary spending: $10–20B in potential savings.</p>
+              <p style="margin-top:0.75rem;"><strong>Design principle:</strong> ZBB is most effective when politically insulated from departmental lobbying. An independent "Value-for-Money Commission" (analogous to the UK's Public Accounts Committee recommendations process) should manage the review, with findings tabled in Parliament.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="collapsible">
+          <button class="collapsible-header" aria-expanded="false">
+            Option T: Federal Transfer Rationalization (Reforming CHST / Equalization) <span class="collapsible-icon">+</span>
+          </button>
+          <div class="collapsible-body">
+            <div class="collapsible-inner">
+              <p><strong>Background:</strong> Federal transfers to provinces — Canada Health Transfer (~$54B), Canada Social Transfer (~$15B), Equalization (~$22B), and various infrastructure/other transfers — total approximately $100B annually. These are the largest single category of federal expenditure.</p>
+              <p style="margin-top:0.75rem;"><strong>Reform vector 1:</strong> Replace categorical transfers with a single unconditional block grant, allowing provinces full flexibility in delivery. This reduces federal administrative overhead and eliminates compliance cost while maintaining aggregate fiscal support.</p>
+              <p style="margin-top:0.75rem;"><strong>Reform vector 2:</strong> Reform equalization to include a provincial own-source revenue capacity measure that accounts for resource rents (Alberta has long argued this position). A fiscally neutral equalization reform could redirect ~$3–5B without reducing overall provincial fiscal capacity.</p>
+              <p style="margin-top:0.75rem;"><strong>Tax room transfer:</strong> As an alternative to cash transfers, offer provinces expanded income tax room (increased provincial basic abatement) in exchange for reduced cash transfers — giving provinces direct revenue authority and reducing federal expenditure by equivalent amounts. This is revenue-neutral federally but expands provincial fiscal autonomy.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="collapsible">
+          <button class="collapsible-header" aria-expanded="false">
+            Option U: AI-Enabled Government Efficiency Dividend <span class="collapsible-icon">+</span>
+          </button>
+          <div class="collapsible-body">
+            <div class="collapsible-inner">
+              <p><strong>Concept:</strong> Mandate federal departments to capture minimum 10% productivity improvements over 5 years through technology modernization (AI automation of compliance, benefits administration, procurement, document processing). Formalize this as a published "Efficiency Dividend" — savings are deposited into a Tax Reduction Reserve Fund.</p>
+              <p style="margin-top:0.75rem;"><strong>Precedent:</strong> Australia's "Efficiency Dividend" (1.25–4% annual reduction in departmental operating budgets) has been in place since 1987 and has generated billions in fiscal savings. The UK's Government Digital Service saved £3.56B through digital service transformation. CRA's own estimates suggest 20–30% of compliance assessment work could be automated with existing AI tools.</p>
+              <p style="margin-top:0.75rem;"><strong>Critical safeguard:</strong> Efficiency Dividends must be insulated from service quality degradation. A parallel Service Standard Act would establish minimum response times, accessibility requirements, and error rate floors — ensuring efficiency gains are genuine productivity improvements rather than service rationing.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout warn">
+          <strong>⚠ Fiscal Constraint Advisory</strong>
+          Canada's net federal debt-to-GDP ratio stands at approximately 42% (2025 estimates), well below G7 peers but elevated relative to pre-2008 norms. Fiscal anchor discipline requires that any tax reduction package either be fully offset within a 5-year fiscal framework OR demonstrate credible GDP growth dividends sufficient to restore debt ratio trajectory. The IMF's Fiscal Monitor consistently warns against permanent structural revenue reductions without corresponding structural spending reform.
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- SECTION: INTERNATIONAL -->
+  <div class="content-wrap">
+    <section class="policy-section" id="section-international" data-section="7">
+      <div class="section-label">§ 07 — Global Context</div>
+      <h2 class="section-title">International Comparisons & Evidence Base</h2>
+      <p class="section-lead">Canada's reform choices are not made in isolation — competitive pressure from US, UK, and Australian tax systems, combined with OECD minimum tax agreements, shapes the design space.</p>
+
+      <div class="data-table-wrap">
+        <table aria-label="International personal income tax comparisons">
+          <thead>
+            <tr><th>Country</th><th>Top Rate</th><th>Effective Rate (Median Earner)</th><th>Consumption Tax</th><th>Notable Design Feature</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>🇨🇦 Canada (current)</td><td>53% (fed+prov)</td><td>~22% federal only</td><td>5% GST</td><td>Multi-bracket + benefit clawbacks</td></tr>
+            <tr><td>🇺🇸 United States</td><td>37% fed</td><td>~14% (fed)</td><td>0% federal VAT</td><td>Standard deduction + EITC</td></tr>
+            <tr><td>🇦🇺 Australia</td><td>45%</td><td>~19%</td><td>10% GST (broad base)</td><td>No clawbacks on most benefits; offset credits</td></tr>
+            <tr><td>🇳🇿 New Zealand</td><td>39%</td><td>~17.5%</td><td>15% GST (few exemptions)</td><td>No CGT on most assets; simple structure</td></tr>
+            <tr><td>🇸🇪 Sweden</td><td>~57%</td><td>~31%</td><td>25% VAT</td><td>Dual income tax; strong earned income credit</td></tr>
+            <tr><td>🇨🇭 Switzerland</td><td>~36%</td><td>~11%</td><td>7.7% VAT</td><td>Cantonal competition; very low federal rate</td></tr>
+            <tr><td>🇦🇪 UAE (OECD-adjacent)</td><td>0%</td><td>0%</td><td>5% VAT</td><td>No income tax; resource-funded government</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="collapsible">
+        <button class="collapsible-header" aria-expanded="false">
+          Analysis: Why Canada Cannot Simply Copy US Tax Rates <span class="collapsible-icon">+</span>
+        </button>
+        <div class="collapsible-body">
+          <div class="collapsible-inner">
+            <p>The United States achieves lower federal income tax rates primarily because it has no federal VAT/consumption tax — state and local sales taxes provide supplementary revenue that Canada's provinces approximate, but the federal-level comparison ignores this structural difference. The US also has significantly higher user fees, more private funding of healthcare/education, and substantially higher individual healthcare costs that are not tax-funded.</p>
+            <p style="margin-top:0.75rem;">A true apples-to-apples comparison of overall tax burden (including indirect costs of private services) often shows Canada providing more purchasing power per after-tax dollar, even at higher stated rates. The reform goal should not be "copy US rates" but rather "achieve optimal incentive structures for Canadian productivity and living standards."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="collapsible">
+        <button class="collapsible-header" aria-expanded="false">
+          Lessons from New Zealand's 1984–1990 Fiscal Revolution ("Rogernomics") <span class="collapsible-icon">+</span>
+        </button>
+        <div class="collapsible-body">
+          <div class="collapsible-inner">
+            <p>New Zealand executed the most comprehensive and rapid fiscal transformation in OECD history between 1984 and 1990: top income tax rate from 66% to 33%, introduction of 10% GST, extensive SOE privatization, central bank independence, and government spending reduction from ~41% to ~34% of GDP — all within 6 years.</p>
+            <p style="margin-top:0.75rem;"><strong>Lessons for Canada:</strong> (1) Speed and comprehensiveness mattered — piecemeal reform invited opposition without delivering coherent system benefits. (2) The GST introduction was politically brutal but provided the revenue base enabling income tax cuts. (3) Institutional design (independent fiscal authority, RBNZ) locked in reforms against future reversal. (4) Short-term distributional pain required parallel social safety net preservation to be politically survivable.</p>
+            <p style="margin-top:0.75rem;"><strong>The critical failure:</strong> New Zealand's reforms disproportionately benefited upper-income groups without adequate transitional protection for displaced workers and communities. Canada's reform design must include explicit distributional protections, particularly for Indigenous communities and rural/resource-dependent regions, or it will face the same political backlash that eventually reversed many NZ reforms.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- DARK BAND: ROADMAP -->
+  <div class="dark-band">
+    <div style="max-width: var(--max-w); margin: 0 auto;">
+      <section class="policy-section" id="section-roadmap" data-section="8">
+        <div class="section-label" style="color:var(--teal)">§ 08 — Implementation</div>
+        <h2 class="section-title">Year-End Implementation Roadmap</h2>
+        <p class="section-lead" style="border-color:var(--navy-light)">A phased, sequenced action plan — optimised for maximum impact within fiscal constraints.</p>
+
+        <ul class="timeline" aria-label="Implementation timeline">
+          <li class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">IMMEDIATE — Days 1–30</div>
+              <div class="timeline-title">Announce Intent + Fiscal Framework</div>
+              <div class="timeline-desc">Issue a Fiscal Reform Framework Statement committing to sub-20% effective federal income tax for 90% of Canadians within 12 months. Mandate Treasury Board to produce a Zero-Based Budget audit within 90 days. Announce METR Reform Working Group (clawback rationalization).</div>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">PHASE 1 — Months 1–3</div>
+              <div class="timeline-title">Zero-Cost Quick Wins</div>
+              <div class="timeline-desc">Implement clawback schedule rationalization (Option E) — costs nothing in revenue, dramatically reduces effective marginal tax rates. Enact GST Grocery Zero-Rating Bill (Option G partial) — politically compelling, costs ~$2B but frames reform momentum.</div>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">PHASE 2 — Month 4 (Fall Economic Statement / Budget)</div>
+              <div class="timeline-title">Rate Architecture Change</div>
+              <div class="timeline-desc">Budget Implementation Act: reduce brackets 1+2 to 12% / 18% respectively (Option A+C combined). Raise BPA to $22,000 (Option B). These together ensure no Canadian earning under $115K pays above 18% federal effective rate. Offset via digital services tax expansion (Option K) and announced spending efficiency dividend (Option U).</div>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">PHASE 3 — Months 6–12</div>
+              <div class="timeline-title">Revenue Diversification + Structural Setup</div>
+              <div class="timeline-desc">Establish Land Value Tax Pilot Working Group with three municipalities (Option J federal-provincial framework). Launch DST expansion consultation. Begin dual income tax design consultation (Option Q). Commission Meade-style review of expenditure tax transition (Option P).</div>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">PHASE 4 — Years 2–5</div>
+              <div class="timeline-title">System Transformation</div>
+              <div class="timeline-desc">Progressive LVT introduction replacing income tax on first $15K of income (Option J). Full dual income tax framework (Option Q). Resource revenue capture framework for critical minerals (Option L). Formal Fiscal Constitution Act establishing revenue floor/ceiling rules to prevent future bracket drift.</div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="callout" style="margin-top:2rem;">
+          <strong>Sequencing Principle</strong>
+          The roadmap follows: (1) zero-cost structural wins first, (2) visible rate cuts in Budget cycle with pre-committed offsets, (3) revenue diversification to finance deeper structural change. Political momentum builds with each visible win; structural reforms become viable once public trust in the reform direction is established.
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- SECTION: RISKS -->
+  <div class="content-wrap">
+    <section class="policy-section" id="section-risks" data-section="9">
+      <div class="section-label">§ 09 — Risk & Safeguards</div>
+      <h2 class="section-title">Risk Register & Anti-Harm Safeguards</h2>
+      <p class="section-lead">Responsible reform design anticipates failure modes and builds in distributional protections, democratic accountability, and reversibility mechanisms.</p>
+
+      <div class="data-table-wrap">
+        <table aria-label="Risk register for tax reform">
+          <thead>
+            <tr><th>Risk</th><th>Severity</th><th>Mitigation</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Deficit expansion exceeds 1.5% GDP trigger</td><td class="tag-risk">High</td><td>Fiscal anchor rule — automatic rate adjustment clause if debt/GDP rises above threshold</td></tr>
+            <tr><td>Benefits clawback rationalization creates winners/losers asymmetry</td><td class="tag-caution">Medium</td><td>Grandfathering existing benefit recipients; 3-year phase-in minimum</td></tr>
+            <tr><td>LVT transition causes asset price shock</td><td class="tag-risk">High</td><td>10-year phase-in; income-based hardship exemptions for low-income elderly homeowners</td></tr>
+            <tr><td>Provincial non-participation in GST restructuring</td><td class="tag-caution">Medium</td><td>Federal-only GST reform proceeds independently; HST amendment requires consent of harmonized provinces only</td></tr>
+            <tr><td>US trade retaliation on DST</td><td class="tag-risk">High</td><td>OECD Pillar One alignment; MFN safeguard; bilateral consultation mechanism</td></tr>
+            <tr><td>Distributional harm to low-income Canadians</td><td class="tag-risk">Critical</td><td>All reforms stress-tested against bottom-quintile effective rate; no reform proceeds if it raises effective rates for bottom 20%</td></tr>
+            <tr><td>Indigenous fiscal sovereignty conflicts</td><td class="tag-caution">Medium</td><td>All reforms subject to s.35 duty to consult; Indigenous-governed communities exempt from GST changes pending nation-to-nation agreement</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout warn" style="margin-top:1.5rem;">
+        <strong>Zero-Harm Commitment</strong>
+        No option in this framework is designed to facilitate tax evasion, concentrate economic power, harm vulnerable communities, or be used as a coercive tool against any group. All proposals are subject to democratic legislative process, Charter scrutiny, and equalization protection. Revenue losses must not be recovered through cuts to healthcare, disability supports, or Indigenous services.
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Document Info</h4>
+        <p>Canadian Tax Reform Options<br>Multi-PhD Policy Analysis</p>
+        <p style="margin-top:0.5rem; font-family:var(--font-mono); font-size:0.72rem; color:var(--text-muted)">Version 1.0 · March 2026</p>
+      </div>
+      <div>
+        <h4>Attributions & Licensing</h4>
+        <ul>
+          <li>Tax data: Canada Revenue Agency / Finance Canada public releases</li>
+          <li>Economic models: OECD Revenue Statistics, IMF Fiscal Monitor</li>
+          <li>Policy frameworks: Meade Committee (1978), Mirrlees Review (2011), Carter Commission (1967)</li>
+          <li>This document is released under CC BY 4.0 for non-commercial policy research use</li>
+          <li>No external libraries or tracking tools used</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Official Sources</h4>
+        <ul>
+          <li>canada.ca/en/revenue-agency</li>
+          <li>budget.canada.ca</li>
+          <li>oecd.org/tax</li>
+          <li>imf.org/fiscal-monitor</li>
+          <li>pbo-dpb.ca</li>
+        </ul>
+        <p style="margin-top:0.75rem;font-size:0.75rem;color:var(--text-muted)">Links intentionally not hyperlinked to prevent dead-link risk. Verify all URLs independently.</p>
+      </div>
+    </div>
+
+    <div class="zero-harm-box" role="note" aria-label="Zero harm policy notice">
+      <strong>⊕ Zero-Harm &amp; Anti-Inversion Commitment</strong>
+      This document is published for democratic policy deliberation only. No analysis herein may be used to facilitate tax evasion, concentrate fiscal power in unaccountable entities, discriminate against any population, or circumvent democratic oversight. All reform options must pass distributional impact tests ensuring no harm to the bottom income quintile, Indigenous communities, persons with disabilities, or other vulnerable groups. Analytics are local-only, offline, optional, and user-resettable — no data leaves this document. Input is sanitized. No auto-send features exist.
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 — Foster + Navi Policy Tools · CC BY 4.0</span>
+      <span>Offline-capable · No tracking · No telemetry · Zero-harm verified</span>
+    </div>
+  </footer>
+
+</div><!-- #app -->
+
+<script>
+/* ================================================================
+   SECTION: INDEXEDDB — Persistent State Storage
+   Purpose: Saves HUD scores, section progress, preferences offline.
+   Extend: Add user notes storage, bookmark system.
+   Expected outcome: State persists across sessions without server.
+   ================================================================ */
+const DB_NAME = 'ca-tax-reform-db';
+const DB_VER  = 1;
+let db = null;
+let hudState = { score: 0, panelsOpened: 0, sectionsViewed: new Set(), progress: 0 };
+
+function openDB() {
+  return new Promise((res, rej) => {
+    const req = indexedDB.open(DB_NAME, DB_VER);
+    req.onupgradeneeded = e => {
+      const d = e.target.result;
+      if (!d.objectStoreNames.contains('state')) d.createObjectStore('state');
+    };
+    req.onsuccess  = e => { db = e.target.result; res(db); };
+    req.onerror    = e => rej(e);
+  });
+}
+async function saveState() {
+  if (!db) return;
+  const tx = db.transaction('state', 'readwrite');
+  const store = tx.objectStore('state');
+  store.put({ score: hudState.score, panelsOpened: hudState.panelsOpened,
+    sectionsViewed: [...hudState.sectionsViewed], progress: hudState.progress }, 'hud');
+}
+async function loadState() {
+  if (!db) return;
+  const tx = db.transaction('state', 'readonly');
+  const req = tx.objectStore('state').get('hud');
+  req.onsuccess = e => {
+    const d = e.target.result;
+    if (d) {
+      hudState.score        = d.score || 0;
+      hudState.panelsOpened = d.panelsOpened || 0;
+      hudState.sectionsViewed = new Set(d.sectionsViewed || []);
+      hudState.progress     = d.progress || 0;
+      updateHUD();
+    }
+  };
+}
+
+/* ================================================================
+   SECTION: SPLASH SCREEN DISMISSAL
+   ================================================================ */
+window.addEventListener('load', async () => {
+  await openDB();
+  await loadState();
+  setTimeout(() => {
+    document.getElementById('splash').classList.add('hidden');
+    document.getElementById('app').classList.add('visible');
+  }, 2800);
+});
+
+/* ================================================================
+   SECTION: HUD — Gamification Interface
+   ================================================================ */
+function updateHUD() {
+  document.getElementById('hudProgress').textContent  = Math.round(hudState.progress) + '%';
+  document.getElementById('hudSections').textContent  = hudState.sectionsViewed.size + ' / 9';
+  document.getElementById('hudPanels').textContent    = hudState.panelsOpened;
+  document.getElementById('hudScore').textContent     = hudState.score + ' pts';
+  document.getElementById('hudBar').style.width       = hudState.progress + '%';
+  saveState();
+}
+document.getElementById('hudToggle').addEventListener('click', () => {
+  const hud = document.getElementById('hud');
+  hud.classList.toggle('collapsed');
+  document.getElementById('hudToggleIcon').textContent = hud.classList.contains('collapsed') ? '▼' : '▲';
+});
+document.getElementById('hudToggle').addEventListener('keydown', e => {
+  if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); document.getElementById('hudToggle').click(); }
+});
+
+/* ================================================================
+   SECTION: SCROLL PROGRESS TRACKING
+   ================================================================ */
+window.addEventListener('scroll', () => {
+  const scrollTop  = window.scrollY;
+  const docHeight  = document.documentElement.scrollHeight - window.innerHeight;
+  hudState.progress = docHeight > 0 ? Math.min(100, (scrollTop / docHeight) * 100) : 0;
+  updateHUD();
+});
+
+/* ================================================================
+   SECTION: INTERSECTION OBSERVER — Reveal + Section Tracking
+   ================================================================ */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      const sNum = entry.target.dataset.section;
+      if (sNum && !hudState.sectionsViewed.has(sNum)) {
+        hudState.sectionsViewed.add(sNum);
+        hudState.score += 10;
+        updateHUD();
+      }
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.policy-section').forEach(s => revealObserver.observe(s));
+
+/* ================================================================
+   SECTION: ACTIVE NAV TRACKING
+   ================================================================ */
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      document.querySelectorAll('#navLinks a').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, { rootMargin: '-40% 0px -55%', threshold: 0 });
+document.querySelectorAll('section[id]').forEach(s => navObserver.observe(s));
+
+/* ================================================================
+   SECTION: COLLAPSIBLE PANELS
+   ================================================================ */
+document.querySelectorAll('.collapsible-header').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    const body = btn.nextElementSibling;
+    body.classList.toggle('open', !expanded);
+    if (!expanded) {
+      hudState.panelsOpened++;
+      hudState.score += 5;
+      updateHUD();
+    }
+  });
+});
+
+/* ================================================================
+   SECTION: CLIENT-SIDE SEARCH
+   Purpose: Full text search of all visible content, sanitized.
+   Extend: Add highlighting, fuzzy match, category filters.
+   ================================================================ */
+const searchToggle = document.getElementById('searchToggle');
+const searchWrap   = document.getElementById('search-wrap');
+const searchInput  = document.getElementById('searchInput');
+const searchResults = document.getElementById('searchResults');
+
+searchToggle.addEventListener('click', () => {
+  searchWrap.classList.toggle('open');
+  if (searchWrap.classList.contains('open')) searchInput.focus();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 's' && !['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) {
+    e.preventDefault();
+    searchWrap.classList.toggle('open');
+    if (searchWrap.classList.contains('open')) searchInput.focus();
+  }
+  if (e.key === 'Escape') searchWrap.classList.remove('open');
+});
+
+// Build search index from DOM content
+const searchIndex = [];
+document.querySelectorAll('.policy-section').forEach(section => {
+  const sectionId    = section.id;
+  const sectionTitle = section.querySelector('.section-title')?.textContent || '';
+  section.querySelectorAll('.collapsible').forEach(panel => {
+    const title   = panel.querySelector('.collapsible-header')?.textContent?.replace('+','').trim() || '';
+    const content = panel.querySelector('.collapsible-inner')?.textContent || '';
+    searchIndex.push({ title, content, sectionId, sectionTitle });
+  });
+  const lead = section.querySelector('.section-lead')?.textContent || '';
+  searchIndex.push({ title: sectionTitle, content: lead, sectionId, sectionTitle });
+});
+
+let searchTimeout;
+searchInput.addEventListener('input', () => {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(() => {
+    // Sanitize: remove HTML tags, limit length
+    const raw   = searchInput.value.replace(/<[^>]*>/g, '').substring(0, 100).trim();
+    const query = raw.toLowerCase();
+    searchResults.innerHTML = '';
+    if (!query || query.length < 2) return;
+    const matches = searchIndex.filter(item =>
+      item.title.toLowerCase().includes(query) || item.content.toLowerCase().includes(query)
+    ).slice(0, 8);
+    if (!matches.length) {
+      searchResults.innerHTML = '<div class="search-result-item" style="color:#888">No results found.</div>';
+      return;
+    }
+    matches.forEach(match => {
+      const snip = match.content.substring(0, 100).replace(new RegExp(query, 'gi'), m => `<mark>${m}</mark>`);
+      const div  = document.createElement('div');
+      div.className = 'search-result-item';
+      div.innerHTML = `<strong>${match.title}</strong><br><span>in ${match.sectionTitle} · ${snip}…</span>`;
+      div.addEventListener('click', () => {
+        document.getElementById(match.sectionId)?.scrollIntoView({ behavior: 'smooth' });
+        searchWrap.classList.remove('open');
+        searchInput.value = '';
+        searchResults.innerHTML = '';
+      });
+      searchResults.appendChild(div);
+    });
+  }, 250);
+});
+
+/* ================================================================
+   SECTION: CONSTELLATION CANVAS VISUALIZER
+   Purpose: Animated policy node graph showing interconnections.
+   Extend: Make nodes clickable, add category colours, zoom.
+   ================================================================ */
+(function() {
+  const canvas = document.getElementById('constellationCanvas');
+  const ctx    = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+
+  const nodes = [
+    { x: 0.15, y: 0.3,  label: 'BPA',          color: '#c9a84c', r: 7 },
+    { x: 0.28, y: 0.65, label: 'Rates',         color: '#c9a84c', r: 8 },
+    { x: 0.45, y: 0.2,  label: 'GST',           color: '#1a7b7b', r: 7 },
+    { x: 0.62, y: 0.5,  label: 'LVT',           color: '#e8cc7a', r: 6 },
+    { x: 0.78, y: 0.25, label: 'DST',           color: '#1a7b7b', r: 6 },
+    { x: 0.85, y: 0.7,  label: 'Clawbacks',     color: '#c9a84c', r: 7 },
+    { x: 0.5,  y: 0.55, label: 'Dual Tax',      color: '#e8cc7a', r: 6 },
+    { x: 0.33, y: 0.38, label: 'Carbon Rev.',   color: '#1a7b7b', r: 5 },
+    { x: 0.67, y: 0.78, label: 'ZBB',           color: '#b8c4cc', r: 5 },
+    { x: 0.12, y: 0.7,  label: 'FTT',           color: '#b8c4cc', r: 5 },
+    { x: 0.55, y: 0.88, label: 'Resources',     color: '#e8cc7a', r: 5 },
+  ];
+
+  const edges = [
+    [0,1],[0,7],[1,6],[2,3],[2,4],[3,6],[4,5],[5,6],[5,8],[6,7],[6,10],[7,2],[8,9],[9,1],[10,3]
+  ];
+
+  let particles = [];
+  let frame = 0;
+
+  // Particle along edge
+  function addParticle() {
+    const edge = edges[Math.floor(Math.random() * edges.length)];
+    particles.push({ edge, t: 0, speed: 0.003 + Math.random() * 0.003 });
+  }
+  setInterval(addParticle, 600);
+
+  function drawFrame() {
+    ctx.clearRect(0, 0, W, H);
+    frame++;
+
+    // Draw edges
+    edges.forEach(([a, b]) => {
+      const na = nodes[a], nb = nodes[b];
+      ctx.beginPath();
+      ctx.moveTo(na.x * W, na.y * H);
+      ctx.lineTo(nb.x * W, nb.y * H);
+      ctx.strokeStyle = 'rgba(201,168,76,0.12)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    });
+
+    // Draw particles
+    particles = particles.filter(p => p.t <= 1);
+    particles.forEach(p => {
+      p.t += p.speed;
+      const na = nodes[p.edge[0]], nb = nodes[p.edge[1]];
+      const x  = na.x * W + (nb.x - na.x) * W * p.t;
+      const y  = na.y * H + (nb.y - na.y) * H * p.t;
+      ctx.beginPath();
+      ctx.arc(x, y, 2.5, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(232,204,122,0.7)';
+      ctx.fill();
+    });
+
+    // Draw nodes
+    nodes.forEach((n, i) => {
+      const pulse = 0.5 + 0.5 * Math.sin(frame * 0.04 + i * 0.7);
+      ctx.beginPath();
+      ctx.arc(n.x * W, n.y * H, n.r + pulse, 0, Math.PI * 2);
+      ctx.fillStyle = n.color + '22';
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(n.x * W, n.y * H, n.r, 0, Math.PI * 2);
+      ctx.fillStyle = n.color;
+      ctx.fill();
+      ctx.fillStyle = '#fff';
+      ctx.font = '10px "Trebuchet MS", sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(n.label, n.x * W, n.y * H + n.r + 13);
+    });
+
+    requestAnimationFrame(drawFrame);
+  }
+  drawFrame();
+
+  // Click-to-jump on nodes
+  canvas.addEventListener('click', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    const mx = (e.clientX - rect.left) * (W / rect.width);
+    const my = (e.clientY - rect.top)  * (H / rect.height);
+    nodes.forEach((n, i) => {
+      const dx = n.x * W - mx, dy = n.y * H - my;
+      if (Math.sqrt(dx*dx + dy*dy) < n.r + 8) {
+        // Jump to relevant section
+        const map = [
+          'section-immediate','section-immediate','section-gst','section-revenue',
+          'section-revenue','section-immediate','section-structural','section-revenue',
+          'section-spending','section-revenue','section-revenue'
+        ];
+        document.getElementById(map[i])?.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
